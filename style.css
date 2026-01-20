@@ -9,6 +9,24 @@ html {
     padding: 0;
 }
 
+body {
+    background-color: black;
+}
+
+/* Components */
+.button{
+    border: none;
+    font-weight: bold;
+    border-radius: 30px;
+    background-color: #fff;
+    scale: 100%;
+}
+.button:hover{
+    scale: 105%;
+    background-color: #dcdcdc;
+    transition: 0.2s ease;
+}
+
 a{
     text-decoration: none;
     color: #fff;
@@ -19,15 +37,12 @@ a{
     transition: 0.5s;
 }
 
-body {
-    background-color: bisque;
-}
-
+/* Main Body Styling */
 nav{
     display: flex;
     align-items: center;
     font-family: 'Ubuntu', sans-serif;
-    background-color: black;
+    background-color: #232332;
     width: 100%;
     height: 65px;
     color: #fff;
@@ -44,4 +59,130 @@ nav ul{
 
 .logo{
     font-size: 2.5rem;
+}
+
+/* Main Body Code */
+.container{
+    display: flex;
+    width: 100%;
+    height: 470px;
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.container .player{
+    height: 100%;
+    width: 65%;
+    background-color: #232332;
+    border-radius: 10px;
+}
+
+/* After Nav Styling */
+.container .playlist{
+    height: 100%;
+    width: 31%;
+    background-color: #232332;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.playlist .playlist-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.playlist .playlist-head h1{
+    font-size: 2.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.playlist .playlist-head button{
+    width: 120px;
+    height: 32px;
+    font-size: 1.4rem;
+}
+
+.playlist .slogan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px;
+    font-style: italic;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 25px;
+    border-radius: 2px;
+    background-color: #57576c;
+    color: #d4d4d4;
+}
+
+.playlist .song-menu{
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 320px;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.playlist .song-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist .song-menu::-webkit-scrollbar-thumb {
+    background: #57576c;
+    border-radius: 10px;
+}
+
+.playlist .song-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* song item */
+.playlist .song-menu .song-item{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.playlist .song-menu .song-item span{
+    font-size: 2rem;
+    color: #d3d3d3;
+}
+
+.playlist .song-menu .song-item img{
+    width: 40px; 
+    height: 40px;
+    border-radius: 100%;
+}
+
+.playlist .song-menu .song-item h2 .subtitle{
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 3px;
+}
+
+.playlist .song-menu .song-item i{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    color: #232332;
+    border-radius: 100%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 4px;
 }
