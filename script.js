@@ -1,5 +1,6 @@
-// Variable for progressbar drag feature:
+// Variable for drag feature:
 let isDraggingProgress = false;
+let isDraggingVolume = false;
 
 // Folder
 const selectFolderBtn = document.getElementById("selectFolderBtn");
@@ -20,6 +21,7 @@ const currentTimeEl = document.querySelector(".timer span:first-child");
 const durationEl = document.querySelector(".timer span:last-child");
 
 // Volume bar
+let lastVolume = 40;   // default starting volume
 const volumeBar = document.querySelector(".sound-bar .bar2");
 const volumeDot = document.querySelector(".sound-bar .dot");
 const volumeIcon = document.querySelector(".sound-control i");
@@ -190,8 +192,52 @@ function updateVolumeUI(percent) {
         volumeIcon.className = "fa-solid fa-volume-xmark";
     } else {
         volumeIcon.className = "fa-solid fa-volume-high";
+        lastVolume = percent;   // remember last non-zero volume
     }
 }
+
+// Volume icon mute/unmute feature:
+volumeIcon.addEventListener("click", () => {
+    if (audio.volume > 0) {
+        // Mute
+        lastVolume = Math.round(audio.volume * 100);
+        audio.volume = 0;
+        updateVolumeUI(0);
+    } else {
+        // Unmute
+        audio.volume = lastVolume / 100;
+        updateVolumeUI(lastVolume);
+    }
+});
+
+// Volumebar drag feature:
+const volumeContainer = document.querySelector(".sound-bar");
+
+// Start dragging
+volumeDot.addEventListener("mousedown", () => {
+    isDraggingVolume = true;
+});
+
+// Stop dragging
+document.addEventListener("mouseup", () => {
+    isDraggingVolume = false;
+});
+
+// Move while dragging
+document.addEventListener("mousemove", (e) => {
+    if (!isDraggingVolume) return;
+
+    const rect = volumeContainer.getBoundingClientRect();
+    let offsetX = e.clientX - rect.left;
+
+    offsetX = Math.max(0, Math.min(offsetX, rect.width));
+    const percent = Math.round((offsetX / rect.width) * 100);
+
+    audio.volume = percent / 100;
+    updateVolumeUI(percent);
+});
+
+
 
 // Update Active Song UI in SongMenu:
 function updateActiveSongUI() {
