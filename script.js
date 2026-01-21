@@ -1,3 +1,6 @@
+// Variable for progressbar drag feature:
+let isDraggingProgress = false;
+
 // Folder
 const selectFolderBtn = document.getElementById("selectFolderBtn");
 const folderInput = document.getElementById("folderInput");
@@ -113,8 +116,10 @@ audio.addEventListener("timeupdate", () => {
 
     const percent = (audio.currentTime / audio.duration) * 100;
 
-    progressBar.style.width = percent + "%";
-    progressDot.style.left = percent + "%";
+    if (!isDraggingProgress) {
+        progressBar.style.width = percent + "%";
+        progressDot.style.left = percent + "%";
+    }
 
     currentTimeEl.textContent = formatTime(audio.currentTime);
     durationEl.textContent = formatTime(audio.duration);
@@ -136,6 +141,33 @@ document.querySelector(".timer .bar").addEventListener("click", (e) => {
     audio.currentTime = percent * audio.duration;
 });
 
+// Progressbar drag feature:
+const progressContainer = document.querySelector(".timer .bar");
+
+// Start dragging
+progressDot.addEventListener("mousedown", () => {
+    isDraggingProgress = true;
+});
+
+// Stop dragging
+document.addEventListener("mouseup", () => {
+    isDraggingProgress = false;
+});
+
+// Move while dragging
+document.addEventListener("mousemove", (e) => {
+    if (!isDraggingProgress || !audio.duration) return;
+
+    const rect = progressContainer.getBoundingClientRect();
+    let offsetX = e.clientX - rect.left;
+
+    offsetX = Math.max(0, Math.min(offsetX, rect.width));
+    const percent = (offsetX / rect.width) * 100;
+
+    progressBar.style.width = percent + "%";
+    progressDot.style.left = percent + "%";
+    audio.currentTime = (percent / 100) * audio.duration;
+});
 
 // Volume Control Bar:
 audio.volume = 0.4;
