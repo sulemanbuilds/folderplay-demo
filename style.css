@@ -213,6 +213,18 @@ nav ul {
     margin-right: 4px;
 }
 
+/* Active Song Highlight */
+.song-menu .song-item.active {
+    background-color: #36e2ec20;
+    border-radius: 6px;
+    /* padding: 5px; */
+}
+
+.song-menu .song-item.active h2 {
+    color: #36e2ec;
+}
+
+
 /* Song Player Div */
 .container .player {
     height: 100%;

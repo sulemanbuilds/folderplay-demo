@@ -50,7 +50,7 @@ folderInput.addEventListener("change", function () {
 
         li.innerHTML = `
             <span>${index + 1}</span>
-            <img src="./assets/img/cover/1.jpg">
+            <img src="./cover/1.jpg">
             <h3>
                 ${song.name}
                 <div class="subtitle">Local File</div>
@@ -71,6 +71,7 @@ function playSong(index) {
     audio.play();
 
     playBtn.classList.replace("fa-play", "fa-pause");
+    updateActiveSongUI();
 }
 
 
@@ -85,6 +86,8 @@ playBtn.addEventListener("click", () => {
         audio.pause();
         playBtn.classList.replace("fa-pause", "fa-play");
     }
+
+    updateActiveSongUI();
 });
 
 
@@ -93,12 +96,14 @@ nextBtn.addEventListener("click", () => {
     if (!songs.length) return;
     currentIndex = (currentIndex + 1) % songs.length;
     playSong(currentIndex);
+    updateActiveSongUI();
 });
 
 prevBtn.addEventListener("click", () => {
     if (!songs.length) return;
     currentIndex = (currentIndex - 1 + songs.length) % songs.length;
     playSong(currentIndex);
+    updateActiveSongUI();
 });
 
 
@@ -154,4 +159,21 @@ function updateVolumeUI(percent) {
     } else {
         volumeIcon.className = "fa-solid fa-volume-high";
     }
+}
+
+// Update Active Song UI in SongMenu:
+function updateActiveSongUI() {
+    const allSongs = document.querySelectorAll(".song-item");
+
+    allSongs.forEach((item, index) => {
+        const icon = item.querySelector("i");
+
+        if (index === currentIndex && !audio.paused) {
+            item.classList.add("active");
+            icon.className = "fa-solid fa-pause";
+        } else {
+            item.classList.remove("active");
+            icon.className = "fa-solid fa-play";
+        }
+    });
 }
