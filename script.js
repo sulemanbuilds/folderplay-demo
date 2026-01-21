@@ -177,3 +177,12 @@ function updateActiveSongUI() {
         }
     });
 }
+
+// Autoplay Next Song when current
+audio.addEventListener("ended", () => {
+    if (!songs.length) return;
+
+    currentIndex = (currentIndex + 1) % songs.length;
+    playSong(currentIndex);
+    updateActiveSongUI();
+});
