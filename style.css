@@ -14,14 +14,15 @@ body {
 }
 
 /* Components */
-.button{
+.button {
     border: none;
     font-weight: bold;
     border-radius: 30px;
     background-color: #fff;
     scale: 100%;
 }
-.button:hover{
+
+.button:hover {
     scale: 105%;
     background-color: #dcdcdc;
     transition: 0.2s ease;
@@ -32,18 +33,18 @@ i:hover {
     transition: 0.2s ease-in-out;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
 }
 
-.link:hover{
+.link:hover {
     color: aqua;
     transition: 0.5s;
 }
 
 /* Main Body Styling */
-nav{
+nav {
     display: flex;
     align-items: center;
     font-family: 'Ubuntu', sans-serif;
@@ -53,7 +54,7 @@ nav{
     color: #fff;
 }
 
-nav ul{
+nav ul {
     display: flex;
     align-items: center;
     gap: 1.8rem;
@@ -62,12 +63,12 @@ nav ul{
     font-size: 1.8rem;
 }
 
-.logo{
+.logo {
     font-size: 2.5rem;
 }
 
 /* Main Body Code */
-.container{
+.container {
     display: flex;
     width: 100%;
     height: 470px;
@@ -80,7 +81,7 @@ nav ul{
 /* After Nav Styling */
 
 /* Song Menu */
-.container .playlist{
+.container .playlist {
     height: 100%;
     width: 31%;
     background-color: #232332;
@@ -90,23 +91,23 @@ nav ul{
     font-family: 'Ubuntu', sans-serif;
 }
 
-.playlist .playlist-head{
+.playlist .playlist-head {
     display: flex;
     justify-content: space-between;
 }
 
-.playlist .playlist-head h1{
+.playlist .playlist-head h1 {
     font-size: 2.6rem;
     letter-spacing: 0.2rem;
 }
 
-.playlist .playlist-head button{
+.playlist .playlist-head button {
     width: 120px;
     height: 32px;
     font-size: 1.4rem;
 }
 
-.playlist .slogan{
+.playlist .slogan {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +121,7 @@ nav ul{
     color: #d4d4d4;
 }
 
-.playlist .song-menu{
+.playlist .song-menu {
     /* border: 1px solid white; */
     width: 100%;
     height: 320px;
@@ -148,32 +149,57 @@ nav ul{
 }
 
 
+/* Folder Guide Line */
+.playlist .song-menu .folder-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    font-style: bold;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #57576c;
+    color: #d4d4d4;
+}
+
 /* song item */
-.playlist .song-menu .song-item{
+.playlist .song-menu .song-item {
     list-style-type: none;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
 }
 
-.playlist .song-menu .song-item span{
+.playlist .song-menu .song-item span {
+    width: 38px;
     font-size: 2rem;
     color: #d3d3d3;
 }
 
-.playlist .song-menu .song-item img{
-    width: 40px; 
+.playlist .song-menu .song-item img {
+    width: 40px;
     height: 40px;
     border-radius: 100%;
 }
 
-.playlist .song-menu .song-item h2 .subtitle{
+.playlist .song-menu .song-item h3 {
+    width: 225px;
+    font-weight: 700;
+    box-sizing: border-box;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.playlist .song-menu .song-item h3 .subtitle {
     font-size: 1rem;
     font-weight: 300;
     margin-top: 3px;
 }
 
-.playlist .song-menu .song-item i{
+.playlist .song-menu .song-item i {
     width: 24px;
     height: 24px;
     background-color: #fff;
@@ -208,14 +234,14 @@ nav ul{
     margin-top: auto;
 }
 
-.player .control-bar .icon-container{
+.player .control-bar .icon-container {
     width: 12%;
     /* border: 1px solid white; */
     display: flex;
     justify-content: space-between;
 }
 
-.player .control-bar .icon-container i{
+.player .control-bar .icon-container i {
     width: 24px;
     height: 24px;
     background-color: #fff;
@@ -227,7 +253,7 @@ nav ul{
     align-items: center;
 }
 
-.player .control-bar .timer{
+.player .control-bar .timer {
     width: 68%;
     /* border: 1px solid white; */
     display: flex;
@@ -236,18 +262,18 @@ nav ul{
     gap: 6px;
 }
 
-.player .control-bar .timer span{
+.player .control-bar .timer span {
     font-size: 2rem;
 }
 
-.player .control-bar .timer .bar{
+.player .control-bar .timer .bar {
     position: relative;
     background-color: #57576c;
     width: 100%;
     height: 5px;
 }
 
-.player .control-bar .timer .bar .bar2{
+.player .control-bar .timer .bar .bar2 {
     position: absolute;
     width: 0%;
     height: 100%;
@@ -255,7 +281,7 @@ nav ul{
     top: 0;
 }
 
-.player .control-bar .timer .bar .dot{
+.player .control-bar .timer .bar .dot {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -266,7 +292,7 @@ nav ul{
     transition: 0.2s linear;
 }
 
-.player .control-bar .timer .bar .dot::before{
+.player .control-bar .timer .bar .dot::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -278,7 +304,7 @@ nav ul{
     box-shadow: inset 0px 0px 3px #36e2ec;
 }
 
-.player .control-bar .sound-control{
+.player .control-bar .sound-control {
     width: 20%;
     /* border: 1px solid white; */
     display: flex;
@@ -286,7 +312,7 @@ nav ul{
     align-items: center;
 }
 
-.player .control-bar .sound-control .icon i{
+.player .control-bar .sound-control .icon i {
     width: 24px;
     height: 24px;
     background-color: #fff;
@@ -295,25 +321,25 @@ nav ul{
     font-size: 1.4rem;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
 }
 
-.player .control-bar .sound-control .sound-bar{
+.player .control-bar .sound-control .sound-bar {
     position: relative;
     background-color: #57576c;
     width: 80%;
     height: 5px;
 }
 
-.player .control-bar .sound-control .sound-bar .bar2{
+.player .control-bar .sound-control .sound-bar .bar2 {
     position: absolute;
     width: 40%;
     height: 100%;
     background-color: #36e2ec;
-    top: 0;   
+    top: 0;
 }
 
-.player .control-bar .sound-control .sound-bar .dot{
+.player .control-bar .sound-control .sound-bar .dot {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -321,10 +347,10 @@ nav ul{
     position: absolute;
     top: -5px;
     left: 0%;
-    transition: 0.2s linear;   
+    transition: 0.2s linear;
 }
 
-.player .control-bar .sound-control .sound-bar .dot::before{
+.player .control-bar .sound-control .sound-bar .dot::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -333,5 +359,5 @@ nav ul{
     border: 1px solid #36e2ec;
     top: -3.5px;
     left: -3.5px;
-    box-shadow: inset 0px 0px 3px #36e2ec;   
+    box-shadow: inset 0px 0px 3px #36e2ec;
 }

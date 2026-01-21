@@ -44,58 +44,65 @@
             <!-- Song Menu Div-->
             <div class="song-menu">
 
-                <!-- Song Item -->
+                <!-- Hidden song item, Songs Loaded with Javascript -->
+
                 <!-- <li class="song-item">
                     <span>01</span>
                     <img src="./cover/1.jpg">
-                    <h2>
+                    <h3>
                         Demo song
                         <div class="subtitle">Demo Subtitles</div>
-                    </h2>
+                    </h3>
                     <i class="fa-solid fa-play"></i>
                 </li> -->
-                
+
+                <!-- Guide Line To Select Folder -->
+                <div class="folder-guide">
+                    <p>(Select Folder To Get Started...)</p>
+                </div>
+
+
+                </div>
+            </div>
+
+            <!-- Song Player Div -->
+            <div class="player">
+
+                <!-- Music Control Bar -->
+                <div class="control-bar">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-backward-step"></i>
+                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-forward-step"></i>
+                    </div>
+
+                    <div class="timer">
+                        <span>0:00</span>
+                        <div class="bar">
+                            <!-- <input type="range" value="0" min="0" max="100"> -->
+                            <div class="bar2"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span>0:00</span>
+                    </div>
+
+                    <div class="sound-control">
+                        <div class="icon">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </div>
+                        <div class="sound-bar">
+                            <!-- <input type="range" value="0" min="0" max="100"> -->
+                            <div class="bar2"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
-        <!-- Song Player Div -->
-        <div class="player">
-
-            <!-- Music Control Bar -->
-            <div class="control-bar">
-                <div class="icon-container">
-                    <i class="fa-solid fa-backward-step"></i>
-                    <i class="fa-solid fa-play"></i>
-                    <i class="fa-solid fa-forward-step"></i>
-                </div>
-
-                <div class="timer">
-                    <span>0:00</span>
-                    <div class="bar">
-                        <!-- <input type="range" value="0" min="0" max="100"> -->
-                        <div class="bar2"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <span>0:00</span>
-                </div>
-
-                <div class="sound-control">
-                    <div class="icon">
-                        <i class="fa-solid fa-volume-high"></i>
-                    </div>
-                    <div class="sound-bar">
-                        <!-- <input type="range" value="0" min="0" max="100"> -->
-                        <div class="bar2"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-
-            </div>
-            
-        </div>
-    </div>
-
-    <script src="./script.js"></script>
+        <script src="./script.js"></script>
 </body>
 
 </html>

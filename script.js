@@ -51,10 +51,10 @@ folderInput.addEventListener("change", function () {
         li.innerHTML = `
             <span>${index + 1}</span>
             <img src="./assets/img/cover/1.jpg">
-            <h2>
+            <h3>
                 ${song.name}
                 <div class="subtitle">Local File</div>
-            </h2>
+            </h3>
             <i class="fa-solid fa-play"></i>
         `;
 
