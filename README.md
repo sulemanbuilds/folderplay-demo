@@ -95,5 +95,5 @@ MIT License
 
 ## 👨‍💻 Author
 
-**SulemanBuilds**  
+**Muhammad Suleman Memon**  
 GitHub: https://github.com/sulemanbuilds
