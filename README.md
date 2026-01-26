@@ -87,6 +87,12 @@ MIT License
 
 ---
 
+## Preview
+
+![Preview](screenshot.png)
+
+---
+
 ## 👨‍💻 Author
 
 **SulemanBuilds**  
