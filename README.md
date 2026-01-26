@@ -32,3 +32,56 @@ Craft playlists like a true connoisseur. 🎧
 ---
 
 ## 📁 Project Structure
+
+FolderPlay/
+├── index.html
+├── style.css
+├── script.js
+└── cover/
+└── 1.jpg
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repository:
+git clone https://github.com/sulemanbuilds/folderplay-demo.git
+
+
+2. Open the folder.
+
+3. Open `index.html` in your browser.
+
+4. Click **Select Folder** and choose a folder with audio files.
+
+> ⚠️ Folder selection works best in Chrome / Edge browsers.
+
+---
+
+## 🌱 Future Improvements
+
+- Shuffle and repeat modes
+- Song metadata display
+- Album artwork loading
+- Mobile optimization
+- Dark / Light themes
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome.  
+Feel free to fork and improve.
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+**SulemanBuilds**  
+GitHub: https://github.com/sulemanbuilds
