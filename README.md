@@ -1,3 +1,10 @@
+![GitHub stars](https://img.shields.io/github/stars/sulemanbuilds/folderplay-demo?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/sulemanbuilds/folderplay-demo?style=flat-square)
+![License](https://img.shields.io/github/license/sulemanbuilds/folderplay-demo?style=flat-square)
+![HTML](https://img.shields.io/badge/HTML-5-orange?style=flat-square)
+![CSS](https://img.shields.io/badge/CSS-3-blue?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square)
+
 # 🎵 FolderPlay – Local Folder Music Player
 
 FolderPlay is a lightweight web-based music player built using HTML, CSS, and JavaScript.  
@@ -45,8 +52,7 @@ FolderPlay/
 ## ▶️ How to Run
 
 1. Clone the repository:
-git clone https://github.com/sulemanbuilds/folderplay-demo.git
-
+   git clone https://github.com/sulemanbuilds/folderplay-demo.git
 
 2. Open the folder.
 
