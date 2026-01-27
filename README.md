@@ -38,17 +38,6 @@ Craft playlists like a true connoisseur. 🎧
 
 ---
 
-## 📁 Project Structure
-
-FolderPlay/
-├── index.html
-├── style.css
-├── script.js
-└── cover/
-└── 1.jpg
-
----
-
 ## ▶️ How to Run
 
 1. Clone the repository:
