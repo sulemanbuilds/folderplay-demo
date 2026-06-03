@@ -55,7 +55,7 @@ folderInput.addEventListener("change", function () {
 
         li.innerHTML = `
             <span>${index + 1}</span>
-            <img src="./cover/1.jpg">
+            <img src="./assets/cover/1.jpg">
             <h3>
                 ${song.name}
                 <div class="subtitle">Local File</div>
