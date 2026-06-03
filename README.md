@@ -12,6 +12,8 @@ Select a local folder, and your music plays instantly — no uploads, no account
 
 > *Your music. No cloud required.*
 
+🌐 **[Try it live → sulemanbuilds.github.io/folderplay-demo](https://sulemanbuilds.github.io/folderplay-demo/)**
+
 ---
 
 ## ✨ Features
