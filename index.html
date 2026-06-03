@@ -1,108 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Folder Play</title>
-
-    <!-- Css Link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FolderPlay — Local Music Player</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <nav>
-        <ul>
-            <li class="logo"><a href="./index.html">FolderPlay</a></li>
-            <li><a href="./index.html" class="link">Player</a></li>
-            <li><a href="#" class="link">About</a></li>
-        </ul>
-    </nav>
 
-    <!-- Main Body Code -->
-    <div class="container">
-        <div class="playlist">
-            <div class="playlist-head">
-                <h1>Playlist</h1>
-                <button class="button" type="button" id="selectFolderBtn">
-                    Select Folder
-                </button>
-                <input type="file" id="folderInput" webkitdirectory multiple hidden accept="audio/*">
+  <!-- Background grid texture -->
+  <div class="bg-grid" aria-hidden="true"></div>
 
-            </div>
+  <!-- Nav -->
+  <nav>
+    <a href="./index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-folder-open"></i></span>
+      FolderPlay
+    </a>
+    <div class="nav-links">
+      <a href="./index.html" class="nav-link active">Player</a>
+      <a href="./about.html" class="nav-link">About</a>
+    </div>
+  </nav>
 
-            <div class="slogan">
-                <p>Craft playlists like a true connoisseur</p>
-            </div>
+  <!-- Main Layout -->
+  <main class="app-container">
 
-            <!-- Song Menu Div-->
-            <div class="song-menu">
+    <!-- Left: Playlist -->
+    <aside class="panel playlist-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Playlist</h2>
+        <button class="btn-primary" id="selectFolderBtn">
+          <i class="fa-solid fa-folder-plus"></i>
+          Open Folder
+        </button>
+        <input type="file" id="folderInput" webkitdirectory multiple hidden accept="audio/*">
+      </div>
 
-                <!-- Hidden song item, Songs Loaded with Javascript -->
+      <div class="song-count-bar" id="songCountBar">
+        <span id="songCountText">No songs loaded</span>
+      </div>
 
-                <!-- <li class="song-item">
-                    <span>01</span>
-                    <img src="./cover/1.jpg">
-                    <h3>
-                        Demo song
-                        <div class="subtitle">Demo Subtitles</div>
-                    </h3>
-                    <i class="fa-solid fa-play"></i>
-                </li> -->
-
-                <!-- Guide Line To Select Folder -->
-                <div class="folder-guide">
-                    <p>(Select Folder To Get Started...)</p>
-                </div>
-
-
-                </div>
-            </div>
-
-            <!-- Song Player Div -->
-            <div class="player">
-
-                <!-- Music Control Bar -->
-                <div class="control-bar">
-                    <div class="icon-container">
-                        <i class="fa-solid fa-backward-step"></i>
-                        <i class="fa-solid fa-play"></i>
-                        <i class="fa-solid fa-forward-step"></i>
-                    </div>
-
-                    <div class="timer">
-                        <span>0:00</span>
-                        <div class="bar">
-                            <!-- <input type="range" value="0" min="0" max="100"> -->
-                            <div class="bar2"></div>
-                            <div class="dot"></div>
-                        </div>
-                        <span>0:00</span>
-                    </div>
-
-                    <div class="sound-control">
-                        <div class="icon">
-                            <i class="fa-solid fa-volume-high"></i>
-                        </div>
-                        <div class="sound-bar">
-                            <!-- <input type="range" value="0" min="0" max="100"> -->
-                            <div class="bar2"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+      <div class="song-list" id="songMenu">
+        <div class="empty-state">
+          <i class="fa-solid fa-folder-open empty-icon"></i>
+          <p>Select a folder to load your music</p>
+          <span>Supports MP3, FLAC, WAV, OGG & more</span>
         </div>
+      </div>
+    </aside>
 
-        <script src="./assets/js/script.js"></script>
+    <!-- Right: Player -->
+    <section class="panel player-panel">
+
+      <!-- Album Art / Visualizer Area -->
+      <div class="artwork-area">
+        <div class="artwork-ring" id="artworkRing">
+          <div class="artwork-inner">
+            <i class="fa-solid fa-music artwork-icon" id="artworkIcon"></i>
+            <span class="artwork-label" id="artworkLabel">No track</span>
+          </div>
+        </div>
+        <div class="track-info">
+          <h1 class="track-title" id="trackTitle">—</h1>
+          <p class="track-sub" id="trackSub">Select a folder to begin</p>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-section">
+        <span class="time-label" id="currentTime">0:00</span>
+        <div class="progress-track" id="progressTrack">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-thumb" id="progressThumb"></div>
+        </div>
+        <span class="time-label" id="duration">0:00</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-row">
+        <button class="ctrl-btn secondary" id="shuffleBtn" title="Shuffle" aria-label="Shuffle">
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+        <button class="ctrl-btn" id="prevBtn" title="Previous" aria-label="Previous track">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="ctrl-btn play-btn" id="playBtn" title="Play / Pause" aria-label="Play or pause">
+          <i class="fa-solid fa-play" id="playIcon"></i>
+        </button>
+        <button class="ctrl-btn" id="nextBtn" title="Next" aria-label="Next track">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+        <button class="ctrl-btn secondary" id="repeatBtn" title="Repeat" aria-label="Toggle repeat">
+          <i class="fa-solid fa-repeat"></i>
+        </button>
+      </div>
+
+      <!-- Volume -->
+      <div class="volume-row">
+        <button class="vol-icon-btn" id="muteBtn" aria-label="Mute/Unmute">
+          <i class="fa-solid fa-volume-high" id="volIcon"></i>
+        </button>
+        <div class="volume-track" id="volumeTrack">
+          <div class="volume-fill" id="volumeFill"></div>
+          <div class="volume-thumb" id="volumeThumb"></div>
+        </div>
+        <span class="vol-pct" id="volPct">40%</span>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
